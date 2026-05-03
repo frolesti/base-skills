@@ -56,7 +56,9 @@ code .
 
 ### Què veuràs quan comencis
 
-- La primera vegada, el sistema et farà preguntes per adaptar el stack.
+- La primera vegada, el sistema et farà un interrogatori curt per entendre el projecte.
+- Les preguntes no són fixes: canvien segons el que vulguis construir.
+- Exemple: si és Arduino/IoT, et preguntarà per placa i sensors; no per Vercel o Next.js.
 - A partir d'aquí, el projecte queda configurat i ja pots avançar per fases.
 - Les comandes més útils per al dia a dia són: `/plan`, `/review`, `/test`, `/commit`.
 
@@ -122,6 +124,9 @@ instruccions globals genèriques i la skill `bootstrap` estan actives.
 En paraules planeres: el repositori no et força cap tecnologia al principi.
 Primer entén què vols construir, després t'ajuda a triar i configurar el stack.
 
+Les teves respostes del bootstrap queden guardades com a memòria persistent
+del projecte i es tenen en compte durant tot el desenvolupament.
+
 ### Flux
 
 1. **Primera interacció amb Copilot** al repo creat des de template.
@@ -131,11 +136,12 @@ Primer entén què vols construir, després t'ajuda a triar i configurar el stac
 3. La skill `bootstrap` fa, en aquest ordre:
    - **Detecta** artefactes (`package.json`, `pyproject.toml`, `Cargo.toml`,
      `go.mod`, `pubspec.yaml`…) i n'infereix candidats de stack.
-   - Si el repo és buit, **pregunta** amb `vscode_askQuestions`:
-     llenguatge, framework, gestor de paquets, BD, deploy…
+   - Fa una fase de **preguntes de producte** (objectiu, restriccions, non-goals).
+   - Fa una fase de **preguntes tècniques adaptatives** segons arquetip detectat.
    - **Activa** els paquets d'instruccions corresponents copiant/enllaçant
      els fitxers latents de `.github/_stacks/<nom>/` cap a
      `.github/instructions/` i `.github/skills/`.
+   - **Escriu** `.copilot/project-profile.json` amb directrius permanents de producte.
    - **Escriu** `.copilot/stack.json` amb la configuració decidida (perquè
      el pas 2 no es repeteixi).
    - **Actualitza** `.github/copilot-instructions.md` amb les comandes

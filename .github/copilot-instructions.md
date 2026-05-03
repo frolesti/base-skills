@@ -10,11 +10,12 @@ Repositori plantilla agnòstic. Sense stack propi fins que el bootstrap s'execut
 ## Bootstrap obligatori
 
 - Si **no existeix `.copilot/stack.json`**, abans de qualsevol acció no trivial llegeix `.github/skills/bootstrap/SKILL.md` i executa'l.
-- Si existeix, llegeix-lo per saber stack, gestor de paquets i comandes reals.
+- Si existeix, llegeix `.copilot/stack.json` i `.copilot/project-profile.json` (si hi és) per saber stack, context de producte i comandes reals.
 
 ## Què NO fer
 
 - No assumeixis llenguatge, framework ni gestor de paquets sense `.copilot/stack.json`.
+- No ignoris les restriccions i non-goals de `.copilot/project-profile.json`.
 - No instal·lis dependències ni creïs `package.json`/`pyproject.toml` etc. al repo base. Això ho fa cada projecte fill.
 - No moguis fitxers fora de l'estructura del [README](../README.md) sense confirmació.
 - No escriguis instruccions globals llargues aquí. Si una explicació passa de 5 línies, va a una skill.
