@@ -8,7 +8,7 @@ Aquest fitxer en repeteix el mínim imprescindible perquè altres agents també 
 
 Plantilla agnòstica al stack per iniciar projectes amb un agent de codi
 preconfigurat. **No té stack propi** fins que la skill `bootstrap`
-s'executa sobre un fork.
+s'executa sobre un projecte creat des de template.
 
 ## Regles per a l'agent
 
@@ -33,6 +33,6 @@ s'executa sobre un fork.
 ## Ordre de prioritat si hi ha conflicte
 
 1. Petició explícita de l'usuari en el torn actual.
-2. `.copilot/stack.json` (decisions d'aquest fork).
+2. `.copilot/stack.json` (decisions d'aquest projecte).
 3. `.github/copilot-instructions.md`.
 4. Aquest fitxer (`AGENTS.md`).

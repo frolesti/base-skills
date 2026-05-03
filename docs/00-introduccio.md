@@ -28,14 +28,14 @@ Una **arquitectura per capes** on cada peça es carrega només quan toca:
 
 - **Menys cost** per pregunta (les instruccions globals queden petites).
 - **Més precisió** (l'agent rep només el context rellevant).
-- **Reutilització**: forka el repo, executa el bootstrap i tens un projecte
+- **Reutilització**: crea un projecte des de la template, executa el bootstrap i tens un projecte
   nou amb tot configurat per al stack que toqui.
 - **Coherència entre projectes**: les mateixes comandes `/`, els mateixos
   modes, les mateixes skills meta.
 
 ## El mecanisme d'auto-adaptació
 
-El repo no té stack propi. Quan el forkis i obris Copilot per primer cop,
+El repo no té stack propi. Quan creïs un projecte des de la template i obris Copilot per primer cop,
 una skill anomenada `bootstrap` s'executa automàticament i:
 
 1. Detecta artefactes (`package.json`, `pyproject.toml`…) o et pregunta.

@@ -1,10 +1,10 @@
 # base-skills-repo
 
-Repositori de partida (**fork-and-go**) per iniciar projectes amb GitHub Copilot
+Repositori de partida (**template-first**) per iniciar projectes amb GitHub Copilot
 ja configurat per **maximitzar la precisió** de l'agent i **minimitzar el consum
 de tokens** des del primer commit.
 
-> Idea clau: el repo és **agnòstic al stack**. Un cop forkat, una skill de
+> Idea clau: el repo és **agnòstic al stack**. Un cop creat des de template, una skill de
 > *bootstrap* analitza el projecte (o conversa amb tu si està buit), decideix
 > el stack i **activa només les instruccions i skills rellevants**. La resta
 > queden latents (no consumeixen tokens fins que no es necessiten).
@@ -55,12 +55,12 @@ Cal restringir tools de l'agent per la tasca?     → chatmodes/
 
 ## Mecanisme d'auto-adaptació al stack
 
-Quan forkis el repo, l'estat inicial és **mode neutre**: només les
+Quan creïs un projecte des de template, l'estat inicial és **mode neutre**: només les
 instruccions globals genèriques i la skill `bootstrap` estan actives.
 
 ### Flux
 
-1. **Primera interacció amb Copilot** al repo forkat.
+1. **Primera interacció amb Copilot** al repo creat des de template.
 2. La instrucció global indica a l'agent: *"Si encara no s'ha executat el
    bootstrap (no existeix `.copilot/stack.json`), llegeix la skill
    `bootstrap` abans de res."*
@@ -178,51 +178,24 @@ base-skills-repo/
 
 ---
 
-## Pla d'execució
+## Estat actual
 
-Es construirà per **fases verificables**. Cada fase és funcional per si sola.
+Aquest repositori ja està **operatiu i publicat** com a template:
 
-### Fase 0 — Esquelet i bases (sense stack)
-- [ ] `README.md` (fet)
-- [ ] `LICENSE`, `.gitignore`, `.gitattributes`, `.editorconfig`
-- [ ] `.vscode/settings.json` + `extensions.json`
-- [ ] `AGENTS.md` mínim
-- [ ] `.github/copilot-instructions.md` neutre (≤ 40 línies)
-- [ ] `memories/repo/.gitkeep`
+- Repo públic: `https://github.com/frolesti/base-skills`
+- Template repository: **activat**
+- Base implementada: instruccions globals, skills meta, prompts, chatmodes
+- Paquet de referència implementat: `nextjs-ts`
 
-### Fase 1 — Skills meta i bootstrap
-- [ ] `skills/bootstrap/SKILL.md` (detecció + preguntes + activació)
-- [ ] `skills/add-skill/SKILL.md`
-- [ ] `skills/add-instruction/SKILL.md`
-- [ ] `skills/add-stack/SKILL.md` (com afegir un nou paquet a `_stacks/`)
-
-### Fase 2 — Prompts
-- [ ] `/plan` — invoca l'agent planner i deixa un pla a `memories/session/`
-- [ ] `/review` — diff actual + checklist
-- [ ] `/commit` — genera missatge convencional segons diff
-- [ ] `/test` — invoca test-writer per al fitxer obert
-
-### Fase 3 — Chatmodes (agents)
-- [ ] `planner.chatmode.md`
-- [ ] `reviewer.chatmode.md`
-- [ ] `test-writer.chatmode.md`
-- [ ] `doc-writer.chatmode.md`
-
-### Fase 4 — Primer paquet de stack (per validar el mecanisme)
-- [ ] `_stacks/nextjs-ts/` complet com a referència
-- [ ] Provar el bootstrap end-to-end en un fork buit
-
-### Fase 5 — Paquets addicionals (incrementalment)
-- Es van afegint segons necessitat real, no especulativament.
-  Candidats: `supabase`, `tailwind`, `prisma`, `python-fastapi`,
-  `node-cli`, `astro`, `tauri`…
+Per al flux real de publicació i arrencada de projectes nous, segueix
+la guia pas a pas a `docs/07-publicar-i-template.md`.
 
 ---
 
 ## Com s'utilitza (un cop publicat)
 
 ```bash
-# 1. Fork al teu compte (via GitHub UI) o template
+# 1. Crea un projecte nou des de template
 gh repo create my-new-project --template TEU-USUARI/base-skills-repo
 
 # 2. Clona i obre amb VS Code
@@ -235,16 +208,10 @@ code my-new-project
 
 ---
 
-## Decisions obertes (a confirmar abans de Fase 1)
+## Decisions aplicades
 
-1. **Llicència**: MIT, Apache-2.0, o cap?
-2. **Gestor de paquets per defecte** del propi repo de starter (si necessitem
-   scripts JS): `pnpm`, `npm`, `bun`, o cap (només markdown)?
-3. **Memòries**: deixem `/memories/repo/` versionat amb `.gitkeep` o no el
-   commitejem?
-4. **`_stacks/` versionat**: tot dins el mateix repo, o subrepos/submoduls
-   per poder-los actualitzar independentment?
-5. **Telemetria d'ús de skills** (un comptador local a `.copilot/usage.json`
-   per detectar skills mortes): sí o no?
-
-Quan confirmis aquests 5 punts passem a Fase 0.
+1. Llicència: **cap** (de moment).
+2. Gestor per defecte al repo base: **cap** (es decideix per projecte fill).
+3. Memòria de repo: `memories/repo/.gitkeep` versionat.
+4. Stacks: model **monorepo** dins `.github/_stacks/`.
+5. Telemetria: fitxer local `.copilot/usage.json` previst per auditories.

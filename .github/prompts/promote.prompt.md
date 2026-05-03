@@ -27,7 +27,7 @@ Markdown o HTML segons l'stack del portfolio. Camps:
 - **Subtítol** (1 línia).
 - **Descripció curta** (3-4 línies).
 - **Tags / tecnologies** (Copilot, AI agents, DX, plantilla).
-- **CTA**: link al repo + "Forka i prova".
+- **CTA**: link al repo + "Fes servir la template i prova-ho".
 - **Captura suggerida**: descriu què hauria de mostrar la imatge
   d'acompanyament (no la generis).
 
@@ -38,7 +38,7 @@ Estructura:
 - **Hook**: el problema (instruccions globals = cost a cada torn).
 - **Solució**: arquitectura per capes + auto-adaptació al stack.
 - **Què aporta a la lectora**: 3 beneficis concrets.
-- **Crida a l'acció**: forka el repo, prova-ho, comparteix feedback.
+- **Crida a l'acció**: crea un projecte des de template, prova-ho, comparteix feedback.
 
 ### Peça 3 — Secció per a la newsletter de maig
 

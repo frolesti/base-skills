@@ -1,6 +1,6 @@
 # 06 — FAQ i errors comuns
 
-## Q: He forkat el repo però Copilot no fa res especial. Què passa?
+## Q: He creat un repo des de template però Copilot no fa res especial. Què passa?
 
 Comprova:
 

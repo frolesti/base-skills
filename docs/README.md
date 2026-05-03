@@ -11,7 +11,7 @@ agents de codi, segueix les guies en aquest ordre:
 5. [Optimització de tokens: per què aquesta arquitectura estalvia diners](./04-optimitzacio-tokens.md)
 6. [Estendre el repo: afegir skills, instruccions i stacks propis](./05-estendre.md)
 7. [FAQ i errors comuns](./06-faq.md)
-8. [Publicar el repo i arrencar un projecte real des d'un fork](./07-publicar-i-forkar.md)
+8. [Publicar el repo i arrencar un projecte real des de template](./07-publicar-i-template.md)
 
 Si només vols **començar a usar el repo ara**, salta a
 [02-comandes-slash.md](./02-comandes-slash.md) i [03-chatmodes.md](./03-chatmodes.md).

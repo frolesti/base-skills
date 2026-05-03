@@ -5,7 +5,7 @@
 ## Quan usar-la
 
 - Quan el bootstrap detecta o l'usuari demana un stack que encara no existeix a `_stacks/`.
-- Quan vols preparar un paquet per a futurs forks.
+- Quan vols preparar un paquet per a futurs projectes creats des de template.
 
 ## Procediment
 
@@ -35,7 +35,7 @@
    - `deploy-<target>`.
    - `add-test`.
 
-6. **Proves**: forka el repo en local en una carpeta de prova, executa el bootstrap escollint el nou paquet i verifica que:
+6. **Proves**: crea un projecte de prova des de la template en una carpeta local, executa el bootstrap escollint el nou paquet i verifica que:
    - Els fitxers es copien on toca.
    - `copilot-instructions.md` queda < 60 línies.
    - Els `applyTo` s'activen amb fitxers d'exemple del stack.

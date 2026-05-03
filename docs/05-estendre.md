@@ -59,7 +59,7 @@ les instruccions i skills bàsiques per a <descripció>.
 - Si és **base** (només una per projecte) o **complement**
   (combinable: `tailwind`, `supabase`…).
 
-Després, perquè el bootstrap el pugui activar a futurs forks, ja queda
+Després, perquè el bootstrap el pugui activar a futurs projectes creats des de template, ja queda
 disponible automàticament a `.github/_stacks/`.
 
 ## Crear un prompt nou
