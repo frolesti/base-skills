@@ -1,0 +1,12 @@
+# Normalitza finals de línia entre Windows / macOS / Linux
+* text=auto eol=lf
+
+# Binaris explícits
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.zip binary
