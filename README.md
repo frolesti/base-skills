@@ -4,6 +4,8 @@ Repositori de partida (**template-first**) per iniciar projectes amb GitHub Copi
 ja configurat per **maximitzar la precisió** de l'agent i **minimitzar el consum
 de tokens** des del primer commit.
 
+Pensat per equips i persones que volen treballar amb IA **sense haver de ser expertes en IA**.
+
 > Idea clau: el repo és **agnòstic al stack**. Un cop creat des de template, una skill de
 > *bootstrap* analitza el projecte (o conversa amb tu si està buit), decideix
 > el stack i **activa només les instruccions i skills rellevants**. La resta
@@ -11,6 +13,65 @@ de tokens** des del primer commit.
 
 > 📚 **Nova aquí?** Comença per [docs/](./docs/) — hi ha una guia pas a pas
 > de conceptes, comandes `/`, modes i estendre el repo.
+
+---
+
+## Començar en 5 minuts
+
+Si vols anar per feina, aquest és el camí curt.
+
+### Opció A (recomanada): crear projecte des de template
+
+1. Ves a `https://github.com/frolesti/base-skills`.
+2. Clica **Use this template**.
+3. Crea el teu repo nou (ex: `my-real-project`).
+4. Clona i obre:
+
+```bash
+git clone https://github.com/TEU-USUARI/my-real-project
+cd my-real-project
+code .
+```
+
+5. Obre Copilot Chat i explica què vols construir.
+6. Després executa:
+
+```text
+/plan Vull el primer milestone funcional del projecte
+```
+
+### Opció B: fork
+
+1. Ves a `https://github.com/frolesti/base-skills`.
+2. Clica **Fork**.
+3. Clona el fork i obre'l:
+
+```bash
+git clone https://github.com/TEU-USUARI/base-skills
+cd base-skills
+code .
+```
+
+4. Obre Copilot Chat i comença amb una petició de producte.
+
+### Què veuràs quan comencis
+
+- La primera vegada, el sistema et farà preguntes per adaptar el stack.
+- A partir d'aquí, el projecte queda configurat i ja pots avançar per fases.
+- Les comandes més útils per al dia a dia són: `/plan`, `/review`, `/test`, `/commit`.
+
+---
+
+## Si no ets experta en IA
+
+No passa res. Fes servir aquesta rutina simple:
+
+1. Explica l'objectiu del projecte amb llenguatge normal.
+2. Fes `/plan` abans de tocar codi.
+3. Executa blocs petits de feina.
+4. Tanca cada bloc amb `/review` i `/test`.
+
+Amb això ja treballes amb una base sòlida, sense tecnicismes innecessaris.
 
 ---
 
@@ -57,6 +118,9 @@ Cal restringir tools de l'agent per la tasca?     → chatmodes/
 
 Quan creïs un projecte des de template, l'estat inicial és **mode neutre**: només les
 instruccions globals genèriques i la skill `bootstrap` estan actives.
+
+En paraules planeres: el repositori no et força cap tecnologia al principi.
+Primer entén què vols construir, després t'ajuda a triar i configurar el stack.
 
 ### Flux
 
@@ -189,29 +253,3 @@ Aquest repositori ja està **operatiu i publicat** com a template:
 
 Per al flux real de publicació i arrencada de projectes nous, segueix
 la guia pas a pas a `docs/07-publicar-i-template.md`.
-
----
-
-## Com s'utilitza (un cop publicat)
-
-```bash
-# 1. Crea un projecte nou des de template
-gh repo create my-new-project --template TEU-USUARI/base-skills-repo
-
-# 2. Clona i obre amb VS Code
-git clone https://github.com/TEU-USUARI/my-new-project
-code my-new-project
-
-# 3. Obre Copilot Chat i escriu qualsevol cosa.
-#    El bootstrap s'executarà automàticament la primera vegada.
-```
-
----
-
-## Decisions aplicades
-
-1. Llicència: **cap** (de moment).
-2. Gestor per defecte al repo base: **cap** (es decideix per projecte fill).
-3. Memòria de repo: `memories/repo/.gitkeep` versionat.
-4. Stacks: model **monorepo** dins `.github/_stacks/`.
-5. Telemetria: fitxer local `.copilot/usage.json` previst per auditories.

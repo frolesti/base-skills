@@ -3,12 +3,25 @@
 Aquestes comandes les dispares tu escrivint `/` al panel de Copilot Chat.
 T'estalvien escriure el mateix context una i altra vegada.
 
+## Abans de començar (versió simple)
+
+Si és el teu primer contacte amb aquest sistema, queda't amb aquesta idea:
+
+- `/plan` et prepara el camí.
+- `/review` et diu si hi ha riscos als canvis.
+- `/test` et genera o amplia proves.
+- `/commit` et redacta el missatge final.
+
+No cal memoritzar res més per començar bé.
+
 ---
 
 ## `/plan` — Planificar abans de tocar codi
 
 **Quan usar-la:** abans de qualsevol tasca no trivial (afegir feature,
 refactoritzar, migrar). T'estalvia que l'agent es llanci a editar a cegues.
+
+**Traducció ràpida:** "ajuda'm a no improvisar".
 
 **Què fa:**
 1. Et demana fins a 3 preguntes si la tasca és ambigua.
@@ -35,6 +48,8 @@ quan diguis "endavant", l'execució real comença ja amb context net.
 
 **Quan usar-la:** abans de fer commit, abans de demanar review humana, o
 per analitzar un PR aliè.
+
+**Traducció ràpida:** "mira si m'he deixat algun problema".
 
 **Què fa:**
 1. Per defecte, revisa `git diff` + `git diff --cached` (canvis locals).
@@ -66,6 +81,8 @@ o
 **Quan usar-la:** quan ja has fet `git add` i necessites un missatge
 estructurat sense pensar-hi.
 
+**Traducció ràpida:** "redacta'm un bon títol i resum del canvi".
+
 **Què fa:**
 1. Llegeix el diff *staged*.
 2. Determina type (`feat`, `fix`, `refactor`…) i scope a partir dels paths.
@@ -94,6 +111,8 @@ git add .
 **Quan usar-la:** quan tens codi sense cobertura o quan acabes d'afegir
 una funció i vols proves immediatament.
 
+**Traducció ràpida:** "comprova que això no es trenqui".
+
 **Què fa:**
 1. Identifica l'objectiu (fitxer obert per defecte, o el que li indiquis).
 2. Llegeix `.copilot/stack.json` per saber el framework de test
@@ -121,6 +140,8 @@ una funció i vols proves immediatament.
 
 **Quan usar-la:** cada cert temps (mensualment, per exemple) per netejar
 skills que no aporten res.
+
+**Traducció ràpida:** "quina part del sistema estic aprofitant de veritat?".
 
 **Què fa:**
 1. Llegeix `.copilot/usage.json` (telemetria local, **no** es carrega al
